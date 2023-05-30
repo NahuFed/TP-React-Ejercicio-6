@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import GrillaColores from "./GrillaColores";
 
+
 const FormularioColor = () => {
+
+
+    const[color, setColor] = useState("")
+    const[arrayColores, setArrayColores] = useState([])
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()        
+        setArrayColores([...arrayColores,color])
+        setColor('')
+        console.log(arrayColores)
+    }
+
   return (
     <>
       <Card>
@@ -10,17 +23,18 @@ const FormularioColor = () => {
           <Card.Title>Administrar colores</Card.Title>
         </Card.Header>
         <Card.Body>
-          <Form id="formulario">
+          <Form onSubmit={handleSubmit} id="formulario">
             <Form.Group
               className="mb-3 d-flex align-items-center justify-content-around"
-              controlId="exampleForm.ControlTextarea1"
-            >
-                
+              controlId="color"
+            >                
                 <div className="cajaColorida" style={{backgroundColor: "red",width: "10rem", height: "8rem"}}></div>
               <Form.Control
                 type="text"
                 placeholder="Ingrese un color ej Blue"
                 style={{height: "2.5rem", width: "50%"}}
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
               />
 
                 
@@ -31,7 +45,7 @@ const FormularioColor = () => {
           <Button type="submit" form="formulario">Guardar</Button>
         </Card.Footer>
       </Card>
-      <GrillaColores></GrillaColores>
+      <GrillaColores arrayColores={arrayColores}></GrillaColores>
     </>
   );
 };

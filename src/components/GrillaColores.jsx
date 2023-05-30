@@ -2,12 +2,12 @@ import React from "react";
 import {  Row } from "react-bootstrap";
 import Color from "./Color";
 
-const GrillaColores = () => {
+const GrillaColores = ({arrayColores}) => {
   return (
     <Row className="mt-5">
-        <Color></Color>
-        <Color></Color>
-        <Color></Color>
+        {
+            arrayColores.map((color,indiceColor)=> <Color color = {color} key={indiceColor}></Color>)
+        }
     </Row>
   );
 };

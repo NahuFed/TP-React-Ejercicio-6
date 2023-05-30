@@ -3,18 +3,19 @@ import { Card, Button, Col } from 'react-bootstrap';
 
 
 
-const Color = () => {
+const Color = ({color}) => {
+ 
     return (
         <Col xs={12} md={6} lg={4} className='mb-4'>
         <Card>
           <Card.Header>
-            <Card.Title>Nombre Color</Card.Title>
+            <Card.Title>{color}</Card.Title>
           </Card.Header>
           <Card.Body className="d-flex justify-content-center">
             <div
               className="cajaColorida"
               style={{
-                backgroundColor: "blue",
+                backgroundColor: color,
                 width: "10rem",
                 height: "8rem",
               }}
