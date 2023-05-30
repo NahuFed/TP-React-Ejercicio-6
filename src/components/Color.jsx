@@ -5,7 +5,7 @@ import { Card, Button, Col } from 'react-bootstrap';
 
 const Color = () => {
     return (
-        <Col xs={4}>
+        <Col xs={12} md={6} lg={4} className='mb-4'>
         <Card>
           <Card.Header>
             <Card.Title>Nombre Color</Card.Title>
