@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {  Row } from "react-bootstrap";
 import Color from "./Color";
 
 const GrillaColores = ({arrayColores}) => {
+
   return (
     <Row className="mt-5">
         {
