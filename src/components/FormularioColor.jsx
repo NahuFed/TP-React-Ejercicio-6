@@ -16,8 +16,13 @@ const FormularioColor = () => {
     e.preventDefault();
     setArrayColores([...arrayColores, color]);
     setColor("");
-    console.log(arrayColores);
+    console.log(arrayColores)
   };
+
+  const borrarColor = (indiceColorABorrar) =>{
+    let copiaArrayColores = arrayColores.filter((color, indice)=> indice != indiceColorABorrar)
+    setArrayColores(copiaArrayColores)
+  }
 
   return (
     <>
@@ -55,7 +60,7 @@ const FormularioColor = () => {
           </Button>
         </Card.Footer>
       </Card>
-      <GrillaColores arrayColores={arrayColores}></GrillaColores>
+      <GrillaColores arrayColores={arrayColores} borrarColor={borrarColor}></GrillaColores>
     </>
   );
 };

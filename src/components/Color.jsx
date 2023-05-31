@@ -3,7 +3,7 @@ import { Card, Button, Col } from 'react-bootstrap';
 
 
 
-const Color = ({color}) => {
+const Color = ({color,borrarColor,indice}) => {
  
     return (
         <Col xs={12} md={6} lg={4} className='mb-4'>
@@ -22,7 +22,7 @@ const Color = ({color}) => {
             ></div>
           </Card.Body>
           <Card.Footer className="d-flex justify-content-end">
-            <Button variant="danger" type="submit" form="formulario">
+            <Button variant="danger" type="submit" form="formulario" onClick={()=> borrarColor(indice)}>
               Borrar
             </Button>
           </Card.Footer>
